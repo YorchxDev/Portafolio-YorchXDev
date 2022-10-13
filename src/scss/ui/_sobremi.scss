@@ -1,0 +1,207 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.sobre-mi {
+
+    .sobre-mi-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    .sobre-mi-informacion {
+        padding-right: 5rem;
+
+        h4 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            color: v.$secundario;
+        }
+
+        p {
+            line-height: 2rem;
+            padding: 1rem;
+            color: v.$blanco;
+        }
+    }
+
+    .sobre-mi-estadisticas-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .estadistica {
+            border: 1px solid v.$blanco;
+            border-radius: 1rem;
+            transition: all .3s ease-in-out;
+            box-shadow: 1px 2px 15px rgba(0,0,0, .1 );
+
+            &:hover {
+                cursor: default;
+                transform: translateY(-.5rem);
+                border: 1px solid v.$secundario;
+                box-shadow: 1px 2px 15px rgba(255, 255, 255, 0.3);
+            }
+
+            .estadistica-texto {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem;
+
+                .texto-grande {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: v.$secundario;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .texto-peque {
+                    padding: 0 1rem;
+                    position: relative;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    color: v.$grisClaro;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+}
+
+.btn-principal {
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid v.$secundario;
+    overflow: hidden;
+    
+    .btn-texto {
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: -11px;
+        
+        &::after {
+            content: '';
+            background-color: v.$secundario;
+            display: flex;
+            border-radius: 50%;
+            padding: 1.7rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease-in-out;
+            z-index: -1;
+        }
+
+        &:hover {
+            &::before {
+               width: 100%;
+               height: 100%;
+               background-color: v.$secundario;
+               transform: translateX(0); 
+            }
+        }
+    }
+
+    span::after {
+        content: '';
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        background-image: url(/build/img/iconos/download.svg);
+        margin-left: 1rem;
+    }
+}
+
+.sobre-mi-habilidades {
+    padding-bottom: 4rem;
+
+    .habilidades-titulo {
+        font-size: 3rem;
+        color: v.$secundario;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .barras-progreso {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .barra-progreso {
+            display: flex;
+            flex-direction: column;
+
+            .progreso-titulo {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: 500;
+                color: v.$secundario;
+            }
+
+            .progreso-contenido {
+                display: flex;
+                align-items: center;
+
+                .progreso-texto {
+                    color: v.$blanco;
+                    margin-top: 1rem;
+                }
+
+                .progreso {
+                    width: 100%;
+                    height: .5rem;
+                    background-color: v.$grisMedio;
+                    margin-left: 1rem;
+                    position: relative;
+
+                    span {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        background-color: v.$secundario;
+                    }
+
+                    .html {
+                        width: 80%; //Aqui va lo que llena la barra
+                    }
+
+                    .css {
+                        width: 80%; //Aqui va lo que llena la barra
+                    }
+
+                    .javascript {
+                        width: 70%; //Aqui va lo que llena la barra
+                    }
+
+                    .node {
+                        width: 50%; //Aqui va lo que llena la barra
+                    }
+
+                    .react {
+                        width: 50%; //Aqui va lo que llena la barra
+                    }
+
+                    .php {
+                        width: 50%; //Aqui va lo que llena la barra
+                    }
+                }
+            }
+        }
+    }
+}

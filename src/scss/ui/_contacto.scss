@@ -1,0 +1,55 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.contacto {
+
+
+    .contacto-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto-informacion {
+
+        .contacto-heading {
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: v.$secundario;
+        }
+
+        .contacto-texto {
+            color: v.$blanco;
+            margin: 0 0 3rem 0;
+
+        }
+
+    }
+
+    .dato-info {
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        img {
+            width: 3rem;
+            height: 3rem;
+
+        }
+
+        p {
+            color: v.$blanco;
+            font-size: 2rem;
+            margin: 0 0 0 2rem;
+        }
+
+        a {
+            margin: 0 0 0 2rem;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3rem 18rem;
+}
+
+.seccion {
+    transform: translateY(-100%) scale(0);
+    transition: all .3s ease-in-out;
+    background-color: v.$grisOscuro;
+}
+
+.sec-1 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
+.sec-2 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
+.sec-3 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
+.sec-4 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
+.sec-5 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
+.activa {
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0%{
+            transform: translateY(-100%) scaleY(0);
+        }
+        100%{
+            transform: translateY(0) scaleY(1);
+        }
+    }
+}

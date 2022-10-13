@@ -1,0 +1,30 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+body {
+    background-color: v.$grisOscuro;
+    font-family: v.$fuenteSecundaria;
+    font-size: 1.1rem;
+    color: v.$blanco;
+    transition: all .3s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}

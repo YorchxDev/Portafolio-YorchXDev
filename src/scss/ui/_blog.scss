@@ -1,0 +1,20 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.blogs-contenedor {
+    text-align: center;
+
+    .blog-meme {
+
+        margin: 0 auto;
+
+        height: 50%;
+        width: 50%;
+        
+        img {
+            margin: 0 auto;
+        }
+        
+    }
+
+}

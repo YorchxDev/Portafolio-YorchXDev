@@ -1,0 +1,9 @@
+@forward 'normalize';
+@forward 'globales';
+@forward 'variables';
+@forward 'utilidades';
+@forward 'tipografias';
+@forward 'mixins';
+
+
+/* Añade a este archivo los demas archivos de esta carpeta con @forward y recuerda añadadirlos al archivo principal (app.scss) */

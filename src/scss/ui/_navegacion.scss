@@ -1,0 +1,45 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.navegacion {
+    position: fixed;
+    z-index: 10;
+    top: -10%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(50%);
+
+    .enlace {
+        padding: 2rem;
+        margin: .7rem 0;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: v.$grisMedio;
+        border-radius: 50%;
+        box-shadow: 0 3px 15px rgba(255, 255, 255, 0.3);
+        
+        a {
+            pointer-events: none;
+        }
+    }
+
+    .enlace-icono {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .btn-activo {
+        transition: all .4s ease-in-out;
+
+        background-color: v.$secundario;
+
+        
+    }
+}
