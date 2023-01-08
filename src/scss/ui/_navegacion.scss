@@ -2,15 +2,33 @@
 @use 'src/scss/base/mixins' as m;
 
 .navegacion {
+
+    width: 100%;
     position: fixed;
     z-index: 10;
-    top: -10%;
-    right: 3%;
+    bottom: 3%;
+    
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    transform: translateY(50%);
+    
+
+    @include m.tablet { 
+        height: 50vh;
+        width: unset;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 3%;
+        bottom: unset;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(50%);
+    }
 
     .enlace {
         padding: 2rem;
@@ -38,8 +56,6 @@
     .btn-activo {
         transition: all .4s ease-in-out;
 
-        background-color: v.$secundario;
-
-        
+        background-color: v.$primario;
     }
 }

@@ -7,13 +7,18 @@ section {
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 18rem;
+    padding: 3rem 2rem;
+
+    @include m.tablet { 
+        padding: 3rem 18rem;
+    }
+
 }
 
 .seccion {
     transform: translateY(-100%) scale(0);
     transition: all .3s ease-in-out;
-    background-color: v.$grisOscuro;
+    // background-color: v.$grisOscuro;
 }
 
 .sec-1 {

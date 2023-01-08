@@ -4,13 +4,24 @@
 header {
     height: 100vh;
     color: v.$blanco;
-    overflow: hidden;
+
+    @include m.tablet { 
+        overflow: hidden;
+    }
+
 }
 
 .header-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include m.tablet { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+    }
    
     .header_imagen {
         display: flex;
@@ -18,26 +29,21 @@ header {
         justify-content: center;
         position: relative;
 
-        .header-forma {
-            transition: all 0.3s ease-in-out;
-            width: 75%;
-            height: 100vh;
-            background-color: v.$secundario;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            clip-path: polygon(0 0, 46% 0, 75% 100%, 0% 100% );
-        }
-
         .imagen {
-            border-radius: 15px;
-            height: 90vh;
-            width: 68%;
-            border: 1.5rem solid white;
-            
+
+            height: 500px;
+            width: 100%;
             background-color: v.$negro;
-            transition: all 0.3s ease-in-out;
+
+            @include m.tablet { 
+                border-radius: 15px;
+                height: 90vh;
+                width: 68%;
+                border: 1.5rem solid white;
+                
+                background-color: v.$negro;
+                transition: all 0.3s ease-in-out;   
+            }
 
             img {
                 width: 100%;
@@ -52,8 +58,10 @@ header {
                 }
             }
 
-            &:hover {
-                transform: rotate(-4deg) scale(1.1);
+            @include m.tablet { 
+                &:hover {
+                    transform: rotate(-4deg) scale(1.1);
+                }   
             }
             
         }
@@ -61,16 +69,35 @@ header {
     }
 
     .header-heading {
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: 18rem;
+
+        padding: 2rem;
+        
+
+        @include m.tablet { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+            padding-right: 18rem;
+        }
         
         .nombre {
+            position: absolute;
+            top: 29rem;
             margin-bottom: 0;
             font-size: 4rem;
+            font-family: v.$fuentePrincipal;
+            color: v.$secundario;
             span {
-                color: v.$secundario;
+                color: v.$primario;
+            }
+
+            @include m.tablet { 
+                position: unset;
             }
         }
 
@@ -78,10 +105,18 @@ header {
             margin: 1.5rem 0;
             line-height: 2rem;
             color: v.$blanco;
+            font-size: 2.1rem;
+            font-family: v.$fuenteSecundaria;
+            font-weight: 700;
         }
 
         .btn-principal {
+            margin-bottom: 10rem;
+
             @include m.btn-principal;
+
+            font-family: v.$fuenteSecundaria;
+            text-decoration: none;
 
             span::after {
                 content: '';

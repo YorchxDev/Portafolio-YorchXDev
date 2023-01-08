@@ -71,14 +71,6 @@ exports.versionAvif = versionAvif;
 exports.default = series( imagenes, versionWebp, versionAvif, css, dev );
 
 
-
-
-
-
-
-
-
-
 /* Glosario
 
 src: Busca los archivos de sass

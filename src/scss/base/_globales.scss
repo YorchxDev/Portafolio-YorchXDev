@@ -3,6 +3,7 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    scrollbar-width: thin;
 }
 
 *,*:before, *:after {
@@ -16,9 +17,8 @@ html {
 }
 
 body {
-    background-color: v.$grisOscuro;
-    font-family: v.$fuenteSecundaria;
-    font-size: 1.1rem;
+    background-image: url(/src/img/prestige-COD.gif);
+    background-repeat: repeat;
     color: v.$blanco;
     transition: all .3s ease-in-out;
 }

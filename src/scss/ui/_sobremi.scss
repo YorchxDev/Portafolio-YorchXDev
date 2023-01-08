@@ -2,23 +2,36 @@
 @use 'src/scss/base/mixins' as m;
 
 .sobre-mi {
+    
 
     .sobre-mi-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding-top: 3rem;
-        padding-bottom: 5rem;
+
+        display: flex;
+        flex-direction: column;
+
+        @include m.tablet { 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding-top: 3rem;
+            padding-bottom: 5rem;               
+        }
     }
 
     .sobre-mi-informacion {
-        padding-right: 5rem;
+        margin-bottom: 5rem;
 
+        @include m.tablet { 
+            padding-right: 5rem;   
+            margin-bottom: unset; 
+        }
+        
         h4 {
             font-size: 3rem;
             text-transform: uppercase;
             margin-top: 2rem;
             margin-bottom: 2rem;
             color: v.$secundario;
+            font-family: v.$fuentePrincipal;
         }
 
         p {
@@ -34,6 +47,7 @@
         gap: 2rem;
 
         .estadistica {
+            background-color: v.$primario;
             border: 1px solid v.$blanco;
             border-radius: 1rem;
             transition: all .3s ease-in-out;
@@ -80,6 +94,7 @@
     position: relative;
     border: 1px solid v.$secundario;
     overflow: hidden;
+    text-decoration: none;
     
     .btn-texto {
         padding: 0 1rem;
@@ -88,6 +103,8 @@
         align-items: center;
         margin-left: 1rem;
         margin-right: -11px;
+        font-family: v.$fuenteSecundaria;
+        text-decoration: none;
         
         &::after {
             content: '';
@@ -108,10 +125,13 @@
         }
 
         &:hover {
+            color: v.$secundario;
+
             &::before {
                width: 100%;
                height: 100%;
-               background-color: v.$secundario;
+               background-color: v.$primario;
+               color: v.$secundario;
                transform: translateX(0); 
             }
         }
@@ -129,6 +149,11 @@
 
 .sobre-mi-habilidades {
     padding-bottom: 4rem;
+    margin-bottom: 5rem;
+
+    @include m.tablet { 
+        margin-bottom: 0;
+    }
 
     .habilidades-titulo {
         font-size: 3rem;
@@ -174,7 +199,7 @@
                         left: 0;
                         top: 0;
                         height: 100%;
-                        background-color: v.$secundario;
+                        background-color: v.$primario;
                     }
 
                     .html {
@@ -186,19 +211,19 @@
                     }
 
                     .javascript {
-                        width: 70%; //Aqui va lo que llena la barra
+                        width: 80%; //Aqui va lo que llena la barra
                     }
 
                     .node {
-                        width: 50%; //Aqui va lo que llena la barra
+                        width: 60%; //Aqui va lo que llena la barra
                     }
 
                     .react {
-                        width: 50%; //Aqui va lo que llena la barra
+                        width: 60%; //Aqui va lo que llena la barra
                     }
 
                     .php {
-                        width: 50%; //Aqui va lo que llena la barra
+                        width: 60%; //Aqui va lo que llena la barra
                     }
                 }
             }
